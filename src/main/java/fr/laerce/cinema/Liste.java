@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.Collections;
 
 /**
  * Created by fred on 03/02/2016.
@@ -29,6 +30,7 @@ public class Liste extends HttpServlet {
 
         // boucler sur les films
         FilmsDonnees fd = new FilmsDonnees();
+        Collections.sort(fd.lesFilms, new FilmComparator());
         for (Film film : fd.lesFilms) {
           out.println("  <li>");
           out.println(film.titre);
