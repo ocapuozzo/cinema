@@ -27,10 +27,10 @@ public class FilmsDonnees {
 
     public Film getById(int id){
         Film film = null;
-        for (Film f: lesFilms
-        ) {
+        for (Film f: lesFilms) {
             if(f.id == id){
                 film = f;
+                break;
             }
         }
         return film;
